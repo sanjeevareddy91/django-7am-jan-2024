@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+.form-inline {  
+  display: flex;
+  flex-flow: column wrap;
+  align-items: left;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+
+</style>
+</head>
+<body>
+
+<form class="form-inline" action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+  <label for="f_name">Name:</label>
+  <input type="text" id="f_name" placeholder="Enter Franchesis Name" name="f_name" required><br>
+  <label for="f_nickname">Nick Name:</label>
+  <input type="text" id="f_nickname" placeholder="Enter Nick Name" name="f_nickname" required><br>
+  <label for="f_started_year">Started Year:</label>
+  <input type="number" id="f_started_year" placeholder="Enter Started Year" name="f_started_year" required><br>
+  <label for="no_of_titles">No Of Titles:</label>
+  <input type="number" id="no_of_titles" placeholder="Enter No Of Titles" name="no_of_titles" required><br>
+  <label for="f_logo">Logo:</label>
+  <input type="file" id="f_logo" placeholder="Select File" name="f_logo"><br>
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

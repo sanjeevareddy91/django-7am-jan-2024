@@ -1,0 +1,38 @@
+# Django  -- Web Framework( Which is used to build web applications)
+
+# Difference between Website and Web applications.
+
+# Website - WHich is static(Which will be same for all the users.)
+# Web App - Which is Dynamic and will show different depending on the user..
+
+# Using DJango we can build website and web app..
+
+
+# Different Web frameworks of Python
+    # Django
+    # Flask
+    # Fastapi
+    # CherryPy
+    # Bottle
+
+# Django History:
+    # 2003 started as newpaper website..
+    # Holovaty and Willison.
+    # 2005 first version django..
+    # Latest version in 4.x
+    # Its name origined from the famous guitar Django Reinhardt..
+
+
+Django Features:
+    # Default admin interface..
+    # Default Server.
+    # MVT Architecture(MVC)
+    # Jinja2 Templating.
+    # Default Authentication.
+    # Session Management.
+    # Project Structure creation..
+
+# Python should be installed..
+    # pip install django.
+
+

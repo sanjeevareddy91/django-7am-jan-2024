@@ -1,0 +1,72 @@
+# 1st Project Creation:
+    django-admin startproject project-name 
+    django-admin startproject IplProject
+
+-> IplProject
+    -> IplProject
+        -> __init__.py -> This is just for converting folder into python packages.
+        -> asgi.py -> (Asynchronous Server Gateway Interface)-Used only when we deploy the code on servers.
+        -> settings.py - All the setting related to the project..
+        -> urls.py -> Routes of the project..
+        -> wsgi.py -> (Web server Gateway Interface)-Used only when we deploy the code on servers.
+    -> Manage.py -- > Main important file in django, to run any command in django we need this file..
+
+# Running the project server.
+
+    python manage.py runserver - It will start the project server..
+
+
+Develop -- Environment server 
+QA - Environment Server
+Staging - Environment Server(Wiht genuine data)
+Production - Main Server where your application is running..
+
+# Project -- Combination of apps..
+# App -- A Function or Feature..
+
+Creation of App.
+
+python manage.py startapp app-name 
+
+python manage.py startapp Iplapp
+
+-> migrations - tracking the changes made in the models...
+-> admin.py - > For making changes in the admin interface..
+-> apps.py -> Just information about the app..
+-> models.py -> Complete database table related information..
+-> tests.py -- > For writing the test cases..
+-> views.py -> For writing the custom logics..
+
+
+****Once the app is created you have to make sure you add the app inside the project..****
+Should be added in INSTALLED_APPS under settings.py file..
+
+Creating the credentials for the admin login..
+
+python manage.py createsuperuser
+
+# python manage.py migrate -- > This will afftecting the changes in the models.py to the DB..
+
+
+# Django ORMs : 
+
+# Select * from table-name -- all the details from the table.
+    # Model-name.objects.all() -- This will fetch all the details from the Model..
+
+# Select * from table-name where field-name="values"
+
+    # Model-name.objects.get(field-name=value) -- Will fetch one only record matched with the search..
+    # Model-name.objects.filter(field-name=value) -- Can fetch 0 or more records from the model..
+
+
+# Insert into table-name (column1,column2,column3) values(value1,value2,value3);
+
+Model-name.objects.create(column1=value1,column2=value2,column3=value3)
+
+Update table-name SET column1=value1 where column2=value2;
+
+Model-name.objects.filter(field=value).update(column1=value1,column2=value2)
+
+Delete from table-name where column1=value1;
+
+Model-name.objects.get(column1=value1).delete()
