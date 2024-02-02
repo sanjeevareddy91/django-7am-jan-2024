@@ -25,3 +25,8 @@ def register_franchesis(request):
         Franchesis.objects.create(f_name=f_name,f_nickname=f_nickname,f_started_year=f_started_year,no_of_titles=no_of_titles,f_logo=f_logo)
         return HttpResponse("Franchesis Registered Successfully!")
     return render(request,'register_franchesis.html')
+
+def franchesis_list(request):
+    franchesis_list = Franchesis.objects.all()
+    print(franchesis_list)
+    return HttpResponse("Data fetched")
