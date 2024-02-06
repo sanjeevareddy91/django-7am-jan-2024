@@ -28,5 +28,22 @@ def register_franchesis(request):
 
 def franchesis_list(request):
     franchesis_list = Franchesis.objects.all()
-    print(franchesis_list)
-    return HttpResponse("Data fetched")
+    # print(franchesis_list)
+    return render(request,'franchesis_list.html',{'franchesis':franchesis_list})
+
+
+def franchesis_get(request,id):
+    franchesis = Franchesis.objects.get(id=id)
+    if request.method == "POST":
+        franchesis.f_name = request.POST['f_name']
+        franchesis.f_nickname = request.POST['f_nickname']
+        franchesis.f_started_year = request.POST['f_started_year']
+        franchesis.no_of_titles = request.POST['no_of_titles']
+        franchesis.save()
+        return HttpResponse("Data Updated")
+    return render(request,'franchesis_update.html',{'franchesis':franchesis})
+
+def franchesis_delete(request,id):
+    franchesis = Franchesis.objects.get(id=id)
+    franchesis.delete()
+    return HttpResponse("Data Deleted")
