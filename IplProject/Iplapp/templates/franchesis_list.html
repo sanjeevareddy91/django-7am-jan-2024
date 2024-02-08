@@ -3,3 +3,4 @@
 {% for team in franchesis %}
     <a href="{% url 'franchesis_get' team.id %}">{{team.f_name}}</a><br>
 {% endfor %}
+<button><a href="{% url 'register_franchesis'%}">Register</a></button>
