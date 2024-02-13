@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from Iplapp.models import Franchesis
+from django.contrib import messages
 # Create your views here.
 
 # Function Based Views.
@@ -79,4 +80,11 @@ def franchesismodelform(request):
 
 def franchesisform(request):
     form = FranchesisForm()
+    if request.method == "POST":
+        form = FranchesisForm(request.POST,request.FILES)
+        if form.is_valid():
+            data = form.cleaned_data
+            Franchesis.objects.create(**data)
+            messages.success(request,'Record Saved')
+            return redirect('franchesis_list')
     return render(request,'franchesis_form.html',{'form':form})
